@@ -1,27 +1,35 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface CharacterCardProps {
+export interface CharacterCardProps {
   id: number;
   name: string;
   description: string;
-  imgSrc: string;
+  thumbnail: {
+    path: string;
+    extension: string;
+  };
 }
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({
   id,
   name,
   description,
-  imgSrc,
+  thumbnail: {
+    path,
+    extension,
+  },
 }) => (
   <div>
     <h3>{name}</h3>
-    <img src={imgSrc} alt={name} />
-    <p>{description}</p>
-    <button
-      type="button"
-      onClick={() => console.log(id)}
+    <img src={`${path}.${extension}`} alt={name} />
+    {!!description && (
+      <p>{description}</p>
+    )}
+    <Link
+      to={{ pathname: `character/${id}` }}
     >
       Discover more
-    </button>
+    </Link>
   </div>
 );
