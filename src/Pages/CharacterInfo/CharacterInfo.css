@@ -1,0 +1,10 @@
+.character-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.character-info__summaries {
+	text-align: center;
+}

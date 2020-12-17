@@ -1,0 +1,15 @@
+.summaries-list__title {
+	font-size: 20px;
+	margin: 20px 0;
+}
+
+.summaries-list__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+}
+
+.summaries-list__list__item {
+	margin: 10px 0;
+}

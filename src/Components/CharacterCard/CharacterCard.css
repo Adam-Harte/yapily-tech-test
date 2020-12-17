@@ -16,3 +16,12 @@
 .character-card__desc {
 	font-size: 16px;
 }
+
+@media only screen and (max-width: 600px) {
+	.character-card {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+}

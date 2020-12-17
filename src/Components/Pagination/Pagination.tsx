@@ -1,5 +1,8 @@
 import React from 'react';
+
 import { usePagination } from '../../Hooks/usePagination';
+
+import './Pagination.css';
 
 interface PaginationProps {
   children(items: any[]): JSX.Element;
@@ -17,8 +20,9 @@ export const Pagination: React.FC<PaginationProps> = ({
   return (
     <React.Fragment>
       {children(getCurrentPageItems())}
-      <div>
+      <div className="pagination">
         <button
+          className="pagination__button__prev"
           type="button"
           disabled={currentPage === 1}
           onClick={prev}
@@ -27,6 +31,7 @@ export const Pagination: React.FC<PaginationProps> = ({
         </button>
         <span>{currentPage}</span>
         <button
+          className="pagination__button__next"
           type="button"
           disabled={currentPage === lastPage}
           onClick={next}

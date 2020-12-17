@@ -22,6 +22,7 @@ export const CharactersList: React.FC<CharactersListProps> = ({
           description={character.description}
         >
           <Link
+            className="characters-list__link"
             to={{ pathname: `character/${character.id}` }}
           >
             Discover more

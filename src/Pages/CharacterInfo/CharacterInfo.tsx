@@ -4,6 +4,8 @@ import { getResponseData } from '../../Api/marvelApi';
 import { CharacterCard, CharacterData } from '../../Components/CharacterCard/CharacterCard';
 import { SummariesList } from '../../Components/SummariesList/SummariesList';
 
+import './CharacterInfo.css';
+
 interface CharacterInfoProps extends CharacterData {
   events: {
     items: [];
@@ -33,22 +35,27 @@ export const CharacterInfo: React.FC = () => {
   }, [id]);
 
   return data.length ? (
-    <div>
+    <div className="character-info">
       <CharacterCard
         id={parseInt(id)}
         name={data[0].name}
         thumbnail={data[0].thumbnail}
         description={data[0].description}
       />
-      <SummariesList
-        summaries={data[0].events.items}
-      />
-      <SummariesList
-        summaries={data[0].series.items}
-      />
-      <SummariesList
-        summaries={data[0].stories.items}
-      />
+      <div className="character-info__summaries">
+        <SummariesList
+          title="Events"
+          summaries={data[0].events.items}
+        />
+        <SummariesList
+          title="Series"
+          summaries={data[0].series.items}
+        />
+        <SummariesList
+          title="Stories"
+          summaries={data[0].stories.items}
+        />
+      </div>
     </div>
   ) : (
     <span>Loading...</span>

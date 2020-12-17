@@ -1,0 +1,19 @@
+.pagination {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.pagination__button__prev {
+	padding: 5px;
+	margin: 0;
+	margin-right: 10px;
+}
+
+.pagination__button__next {
+	padding: 5px;
+	margin: 0;
+	margin-left: 10px;
+}
