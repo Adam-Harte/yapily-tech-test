@@ -1,0 +1,18 @@
+.character-card {
+	width: 800px;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.character-card__title {
+	font-size: 24px;
+}
+
+.character-card__img {
+	width: 100%;
+}
+
+.character-card__desc {
+	font-size: 16px;
+}
