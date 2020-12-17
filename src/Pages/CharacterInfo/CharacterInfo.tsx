@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getResponseData } from '../../Api/marvelApi';
-import { CharacterCard, CharacterCardProps } from '../../Components/CharacterCard/CharacterCard';
+import { CharacterCard, CharacterData } from '../../Components/CharacterCard/CharacterCard';
 import { SummariesList } from '../../Components/SummariesList/SummariesList';
 
-interface CharacterInfoProps extends CharacterCardProps {
+interface CharacterInfoProps extends CharacterData {
   events: {
     items: [];
   };

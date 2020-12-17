@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-export interface CharacterCardProps {
+import './CharacterCard.css';
+
+export interface CharacterData {
   id: number;
   name: string;
   description: string;
@@ -11,25 +12,25 @@ export interface CharacterCardProps {
   };
 }
 
+export interface CharacterCardProps extends CharacterData {
+  children?: JSX.Element;
+}
+
 export const CharacterCard: React.FC<CharacterCardProps> = ({
-  id,
   name,
   description,
   thumbnail: {
     path,
     extension,
   },
+  children = null,
 }) => (
-  <div>
-    <h3>{name}</h3>
-    <img src={`${path}.${extension}`} alt={name} />
+  <div className="character-card">
+    <h3 className="character-card__title">{name}</h3>
+    <img className="character-card__img" src={`${path}.${extension}`} alt={name} />
     {!!description && (
-      <p>{description}</p>
+      <p className="character-card__desc">{description}</p>
     )}
-    <Link
-      to={{ pathname: `character/${id}` }}
-    >
-      Discover more
-    </Link>
+    {children}
   </div>
 );
